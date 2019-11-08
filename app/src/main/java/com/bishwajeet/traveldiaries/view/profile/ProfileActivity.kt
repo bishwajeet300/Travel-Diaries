@@ -1,10 +1,10 @@
 package com.bishwajeet.traveldiaries.view.profile
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bishwajeet.traveldiaries.R
 
-class ProfileActivity : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity(), IProfileContract.IProfileView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

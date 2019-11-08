@@ -1,4 +1,4 @@
 package com.bishwajeet.traveldiaries.view.profile
 
-class ProfilePresenter {
+class ProfilePresenter(profileActivityView: IProfileContract.IProfileView) : IProfileContract.IProfilePresenter {
 }

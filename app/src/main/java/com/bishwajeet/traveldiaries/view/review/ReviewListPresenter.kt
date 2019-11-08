@@ -1,6 +1,6 @@
 package com.bishwajeet.traveldiaries.view.review
 
-class ReviewListPresenter : IReviewListContract.IReviewListPresenter {
+class ReviewListPresenter(reviewListActivityView: IReviewListContract.IReviewListView) : IReviewListContract.IReviewListPresenter {
 
 
     override fun onLoad() {

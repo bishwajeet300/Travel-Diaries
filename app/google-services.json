@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1084668152424",
+    "firebase_url": "https://travel-diaries-1db9f.firebaseio.com",
+    "project_id": "travel-diaries-1db9f",
+    "storage_bucket": "travel-diaries-1db9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084668152424:android:68389fdca48024c651c9dd",
+        "android_client_info": {
+          "package_name": "com.bishwajeet.traveldiaries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084668152424-hf1al124umodg908v7tti1367mddiier.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjAoSeROrNcwM3HT-cEnD7iX0S9s1pNIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084668152424-hf1al124umodg908v7tti1367mddiier.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
