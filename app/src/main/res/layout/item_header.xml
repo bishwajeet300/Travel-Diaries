@@ -146,41 +146,36 @@
         android:id="@+id/rlPreview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_margin="@dimen/dimen_8">
 
         <TextView
-            android:id="@+id/preview_1"
+            android:id="@+id/tvTopReviews"
+            style="@style/TextMessageHintStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:background="@drawable/gradient_background"
-            android:padding="@dimen/dimen_8"
-            android:visibility="invisible"
-            android:textColor="@android:color/black" />
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:layout_centerHorizontal="true"
+            android:text="@string/top_reviews"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTopReviews"/>
 
         <TextView
-            android:id="@+id/preview_2"
+            style="@style/TextMessageHintStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/preview_1"
-            android:layout_alignParentEnd="true"
-            android:visibility="invisible"
-            android:layout_marginTop="@dimen/dimen_2"
-            android:background="@drawable/gradient_background"
-            android:padding="@dimen/dimen_8"
-            android:textColor="@android:color/black" />
+            android:layout_below="@+id/rvPreview"
+            android:paddingTop="@dimen/dimen_15"
+            android:layout_marginBottom="@dimen/dimen_4"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_centerHorizontal="true"
+            android:text="@string/all_reviews"/>
 
-        <TextView
-            android:id="@+id/preview_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/preview_2"
-            android:layout_alignParentStart="true"
-            android:visibility="invisible"
-            android:layout_marginTop="@dimen/dimen_2"
-            android:background="@drawable/gradient_background"
-            android:padding="@dimen/dimen_8"
-            android:textColor="@android:color/black" />
 
     </RelativeLayout>
 

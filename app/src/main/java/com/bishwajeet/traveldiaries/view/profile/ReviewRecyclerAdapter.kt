@@ -11,6 +11,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bishwajeet.traveldiaries.R
 import com.bishwajeet.traveldiaries.data.model.ReviewsResponse
 import com.bishwajeet.traveldiaries.interfaces.IAdapterClickListener
@@ -19,6 +20,7 @@ class ReviewRecyclerAdapter(private var mContext: Context, private var reviewRes
 
     private var mData: List<ReviewsResponse.Review>? = reviewResponse.reviews
     private var mListener: IAdapterClickListener = mContext as IAdapterClickListener
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return when (viewType) {
@@ -80,12 +82,12 @@ class ReviewRecyclerAdapter(private var mContext: Context, private var reviewRes
                 holder.tvReviewCount.text =reviewResponse.totalCount.toString().plus(" reviews")
 
                 holder.rlPreview.visibility = View.VISIBLE
-                holder.preview1.text = mData?.get(0)?.message?.subSequence(0, 40) ?: mData?.get(0)?.title?.subSequence(0, 40)
-                holder.preview2.text = mData?.get(1)?.message?.subSequence(0, 40) ?: mData?.get(1)?.title?.subSequence(0, 40)
-                holder.preview3.text = mData?.get(2)?.message?.subSequence(0, 40) ?: mData?.get(2)?.title?.subSequence(0, 40)
-                holder.preview1.visibility = View.VISIBLE
-                holder.preview2.visibility = View.VISIBLE
-                holder.preview3.visibility = View.VISIBLE
+
+                val staggeredGridLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+                holder.rvPreview.layoutManager = staggeredGridLayoutManager
+
+                val previewAdapter = PreviewAdapter(mContext, mData!!.subList(0, 6), mListener)
+                holder.rvPreview.adapter = previewAdapter
             }
             getItemViewType(position) == TYPE_ITEM -> run {
                 val holder = viewHolder as ReviewViewHolder
@@ -139,6 +141,7 @@ class ReviewRecyclerAdapter(private var mContext: Context, private var reviewRes
 
     open class ViewHolder(v: View) : RecyclerView.ViewHolder(v)
 
+
     class HeaderViewHolder(@NonNull itemView: View) : ViewHolder(itemView) {
 
         var ivProfile: ImageView = itemView.findViewById(R.id.ivProfile)
@@ -149,13 +152,10 @@ class ReviewRecyclerAdapter(private var mContext: Context, private var reviewRes
         var tvTourLocation: TextView = itemView.findViewById(R.id.tvTourLocation)
         var tvRating: TextView = itemView.findViewById(R.id.tvRating)
         var tvReviewCount: TextView = itemView.findViewById(R.id.tvReviewCount)
-        
-        //TODO:Change
         var rlPreview: RelativeLayout = itemView.findViewById(R.id.rlPreview)
-        var preview1: TextView = itemView.findViewById(R.id.preview_1)
-        var preview2: TextView = itemView.findViewById(R.id.preview_2)
-        var preview3: TextView = itemView.findViewById(R.id.preview_3)
+        var rvPreview: RecyclerView = itemView.findViewById(R.id.rvPreview)
     }
+
 
     class ReviewViewHolder(@NonNull itemView: View) : ViewHolder(itemView) {
 
@@ -169,11 +169,13 @@ class ReviewRecyclerAdapter(private var mContext: Context, private var reviewRes
 
     }
 
+
     class FooterViewHolder(@NonNull itemView: View) : ViewHolder(itemView) {
 
         var pbLoader: ProgressBar = itemView.findViewById(R.id.pbLoader)
 
     }
+
 
     companion object {
         const val TYPE_HEADER = 0

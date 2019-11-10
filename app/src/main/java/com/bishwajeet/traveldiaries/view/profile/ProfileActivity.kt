@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.util.SparseArray
 import android.view.View
+import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.util.set
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +31,7 @@ class ProfileActivity : DaggerAppCompatActivity(), IProfileContract.IProfileView
     private var reviewsAdapter: ReviewRecyclerAdapter? = null
 
     private lateinit var clParentLayout: ConstraintLayout
+    private lateinit var loadingLayout: LinearLayout
     private lateinit var rvReviews: RecyclerView
 
     var isLoading = false
@@ -47,6 +49,7 @@ class ProfileActivity : DaggerAppCompatActivity(), IProfileContract.IProfileView
     private fun initializeView() {
         clParentLayout = findViewById(com.bishwajeet.traveldiaries.R.id.clParentLayout)
         rvReviews = findViewById(com.bishwajeet.traveldiaries.R.id.rvReviews)
+        loadingLayout = findViewById(com.bishwajeet.traveldiaries.R.id.loadingLayout)
 
         rvReviews.layoutManager = LinearLayoutManager(this@ProfileActivity)
         rvReviews.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -132,5 +135,17 @@ class ProfileActivity : DaggerAppCompatActivity(), IProfileContract.IProfileView
         intent.putExtra(INTENT_REVIEW_MODEL, reviewModel)
         startActivity(intent)
 
+    }
+
+
+    override fun showLoadingLayout() {
+        loadingLayout.visibility = View.VISIBLE
+        rvReviews.visibility = View.GONE
+    }
+
+
+    override fun hideLoadingLayout() {
+        rvReviews.visibility = View.VISIBLE
+        loadingLayout.visibility = View.GONE
     }
 }

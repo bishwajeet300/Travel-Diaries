@@ -19,6 +19,10 @@ interface IProfileContract {
         fun notifyAdapterOfNewData(reviewListResponse: ReviewsResponse)
 
         fun showMessage(s: String)
+
+        fun showLoadingLayout()
+
+        fun hideLoadingLayout()
     }
 
 
@@ -26,8 +30,6 @@ interface IProfileContract {
         fun init()
 
         fun loadMore(offset: Int)
-
-        fun reinitData(averageRating: Number, totalCount: Number, pagination: ReviewsResponse.Pagination)
 
         fun transformObject(review: ReviewsResponse.Review): ReviewModel
     }

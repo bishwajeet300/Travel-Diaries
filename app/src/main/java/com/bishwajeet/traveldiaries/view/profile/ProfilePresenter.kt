@@ -18,6 +18,7 @@ class ProfilePresenter @Inject constructor(
 
 
     override fun init() {
+        mProfileActivityView.showLoadingLayout()
         mProfileActivityView.callAsyncTaskForReviews(this as IAsyncListener, mApiServices, "23776", 30, 0)
     }
 
@@ -27,13 +28,9 @@ class ProfilePresenter @Inject constructor(
     }
 
 
-    override fun reinitData(averageRating: Number, totalCount: Number, pagination: ReviewsResponse.Pagination) {
-
-    }
-
-
     override fun onFetchComplete(reviewListResponse: ReviewsResponse) {
         mProfileActivityView.notifyAdapterOfNewData(reviewListResponse)
+        mProfileActivityView.hideLoadingLayout()
     }
 
 
