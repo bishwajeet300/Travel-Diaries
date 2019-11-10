@@ -1,6 +1,6 @@
 package com.bishwajeet.traveldiaries.view.review
 
-interface IReviewListContract {
+interface IReviewContract {
 
     interface IReviewListView {
         fun onLoadComplete()

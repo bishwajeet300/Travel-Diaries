@@ -1,11 +1,112 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="TravelDiariesTheme" parent="FullscreenTheme">
+        <item name="android:colorForeground">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+    </style>
+
+    <style name="AppNameStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_40</item>
+        <item name="android:fontFamily">@font/raleway_light</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="ProfileStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_32</item>
+        <item name="android:fontFamily">@font/raleway_light</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="TextStylePrimary" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="TextChipStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="TextMessageStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">1dp</item>
+    </style>
+
+    <style name="RatingReviewStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textSecondary</item>
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="RatingReviewProfileStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textSecondary</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="TextSecondaryStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/text_10</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="RatingTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="TextMessageHintStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textHint</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">1dp</item>
     </style>
 
 </resources>

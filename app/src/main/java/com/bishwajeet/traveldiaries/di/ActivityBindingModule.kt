@@ -2,8 +2,8 @@ package com.bishwajeet.traveldiaries.di
 
 import com.bishwajeet.traveldiaries.view.profile.ProfileActivity
 import com.bishwajeet.traveldiaries.view.profile.ProfileModule
-import com.bishwajeet.traveldiaries.view.review.ReviewListActivity
-import com.bishwajeet.traveldiaries.view.review.ReviewListModule
+import com.bishwajeet.traveldiaries.view.review.ReviewActivity
+import com.bishwajeet.traveldiaries.view.review.ReviewModule
 import com.bishwajeet.traveldiaries.view.splash.SplashActivity
 import com.bishwajeet.traveldiaries.view.splash.SplashModule
 import dagger.Module
@@ -18,8 +18,8 @@ abstract class ActivityBindingModule {
 
 
     @PerActivityScope
-    @ContributesAndroidInjector(modules = [ReviewListModule::class])
-    abstract fun bindReviewListActivity(): ReviewListActivity
+    @ContributesAndroidInjector(modules = [ReviewModule::class])
+    abstract fun bindReviewListActivity(): ReviewActivity
 
 
     @PerActivityScope

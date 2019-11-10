@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:contentDescription="@string/tour_name"
+            android:src="@drawable/tour_image" />
+
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share_black_24dp"
+            android:layout_margin="@dimen/dimen_15"
+            android:padding="@dimen/dimen_8"
+            android:background="@drawable/circle_background"
+            android:contentDescription="@string/share"
+            android:layout_gravity="end|top"/>
+
+        <ImageView
+            android:id="@+id/ivLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_heart"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_60"
+            android:padding="@dimen/dimen_8"
+            android:background="@drawable/circle_background"
+            android:contentDescription="@string/share"
+            android:layout_gravity="end|top"/>
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_left"
+            android:layout_margin="@dimen/dimen_15"
+            android:padding="@dimen/dimen_8"
+            android:background="@drawable/circle_background"
+            android:contentDescription="@string/back"
+            android:layout_gravity="start|top"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/shadow_bg"
+            android:paddingTop="@dimen/dimen_15">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_background"
+                android:padding="@dimen/dimen_15">
+
+                <View
+                    android:layout_width="48dp"
+                    android:layout_height="4dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/chips" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_15"
+        android:layout_marginEnd="@dimen/dimen_15"
+        android:layout_marginBottom="@dimen/dimen_15">
+
+        <TextView
+            android:id="@+id/tvTourName"
+            style="@style/RatingTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tour_name"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/tvTourLocation"
+            style="@style/TextMessageStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTourName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_marginBottom="@dimen/dimen_15"
+            android:drawableStart="@drawable/ic_location"
+            android:drawablePadding="@dimen/dimen_2"
+            android:gravity="center"
+            android:padding="@dimen/dimen_4"
+            android:text="@string/tour_location"
+            android:textAlignment="center" />
+
+        <View
+            android:id="@+id/vDivider"
+            android:layout_width="@dimen/dimen_05"
+            android:layout_height="@dimen/dimen_15"
+            android:layout_below="@+id/tvTourLocation"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:background="@color/textPrimary"
+            android:padding="@dimen/dimen_4" />
+
+        <TextView
+            android:id="@+id/tvRating"
+            style="@style/RatingReviewProfileStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTourLocation"
+            android:layout_alignBaseline="@+id/vDivider"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:layout_toStartOf="@+id/vDivider" />
+
+        <TextView
+            android:id="@+id/tvReviewCount"
+            style="@style/RatingReviewProfileStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTourLocation"
+            android:layout_alignBaseline="@+id/vDivider"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:layout_toEndOf="@+id/vDivider" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlPreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_8">
+
+        <TextView
+            android:id="@+id/preview_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/gradient_background"
+            android:padding="@dimen/dimen_8"
+            android:visibility="invisible"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/preview_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/preview_1"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:background="@drawable/gradient_background"
+            android:padding="@dimen/dimen_8"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/preview_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/preview_2"
+            android:layout_alignParentStart="true"
+            android:visibility="invisible"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:background="@drawable/gradient_background"
+            android:padding="@dimen/dimen_8"
+            android:textColor="@android:color/black" />
+
+    </RelativeLayout>
+
+</LinearLayout>

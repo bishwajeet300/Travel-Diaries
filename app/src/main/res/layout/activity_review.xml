@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_splash_background"
+    tools:context=".view.review.ReviewActivity">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_left"
+        android:layout_margin="@dimen/dimen_15"
+        android:padding="@dimen/dimen_8"
+        android:background="@drawable/circle_background"
+        android:contentDescription="@string/back"
+        android:layout_gravity="start|top"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/dimen_8"
+        android:background="@drawable/circle_shadow"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/dimen_15"
+            android:layout_margin="@dimen/dimen_15"
+            android:background="@drawable/white_curved_corner_background">
+
+            <LinearLayout
+                android:id="@+id/vProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_shadow"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvProfile"
+                    style="@style/ProfileStyle"
+                    android:layout_width="@dimen/dimen_48"
+                    android:layout_height="@dimen/dimen_48"
+                    android:background="@drawable/gradient_background"
+                    android:gravity="center"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/TextStylePrimary"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextSecondaryStyle"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:text="@string/rated_small"/>
+
+            <TextView
+                android:id="@+id/tvTour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/RatingTextStyle"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/RatingReviewStyle"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextSecondaryStyle"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:text="@string/and_said"/>
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:textStyle="italic"
+                android:padding="@dimen/dimen_4"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:textAlignment="center"
+                style="@style/TextMessageStyle"
+                android:gravity="center"/>
+
+
+            <TextView
+                android:id="@+id/tvTimeAndPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextSecondaryStyle"
+                android:textAlignment="center"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

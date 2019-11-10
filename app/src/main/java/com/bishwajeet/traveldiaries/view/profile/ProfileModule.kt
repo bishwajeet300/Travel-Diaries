@@ -1,5 +1,6 @@
 package com.bishwajeet.traveldiaries.view.profile
 
+import com.bishwajeet.traveldiaries.data.remote.IAPIServiceContract
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -15,6 +16,6 @@ abstract class ProfileModule {
 
         @JvmStatic
         @Provides
-        fun provideProfileActivityPresenter(profileActivityView: IProfileContract.IProfileView): IProfileContract.IProfilePresenter = ProfilePresenter(profileActivityView)
+        fun provideProfileActivityPresenter(profileActivityView: IProfileContract.IProfileView, apiServices: IAPIServiceContract): IProfileContract.IProfilePresenter = ProfilePresenter(profileActivityView, apiServices)
     }
 }

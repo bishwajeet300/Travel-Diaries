@@ -7,6 +7,6 @@ interface ISplashContract {
     }
 
     interface ISplashPresenter {
-        fun onLoad()
+        fun init()
     }
 }

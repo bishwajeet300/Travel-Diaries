@@ -1,8 +1,12 @@
 package com.bishwajeet.traveldiaries.view.splash
 
-class SplashPresenter(splashActivityView: ISplashContract.ISplashView) : ISplashContract.ISplashPresenter {
+import javax.inject.Inject
 
-    override fun onLoad() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+class SplashPresenter @Inject constructor(splashActivityView: ISplashContract.ISplashView) : ISplashContract.ISplashPresenter {
+
+    private var mSplashActivityVew: ISplashContract.ISplashView = splashActivityView
+
+    override fun init() {
+        mSplashActivityVew.onLoadComplete()
     }
 }
