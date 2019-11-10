@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.annotation.NonNull
@@ -122,8 +123,7 @@ class ReviewRecyclerAdapter(private var mContext: Context, private var reviewRes
             }
             else -> {
                 val holder = viewHolder as FooterViewHolder
-
-                holder.tvFooter.text = "f"
+                holder.pbLoader.visibility = View.VISIBLE
             }
         }
     }
@@ -171,7 +171,7 @@ class ReviewRecyclerAdapter(private var mContext: Context, private var reviewRes
 
     class FooterViewHolder(@NonNull itemView: View) : ViewHolder(itemView) {
 
-        var tvFooter: TextView = itemView.findViewById(R.id.tvFooter)
+        var pbLoader: ProgressBar = itemView.findViewById(R.id.pbLoader)
 
     }
 
