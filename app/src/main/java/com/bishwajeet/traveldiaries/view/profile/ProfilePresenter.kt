@@ -19,12 +19,12 @@ class ProfilePresenter @Inject constructor(
 
     override fun init() {
         mProfileActivityView.showLoadingLayout()
-        mProfileActivityView.callAsyncTaskForReviews(this as IAsyncListener, mApiServices, "23776", 30, 0)
+        mProfileActivityView.callAsyncTaskForReviews(this as IAsyncListener, mApiServices, "23776", 20, 0)
     }
 
 
     override fun loadMore(offset: Int) {
-        mProfileActivityView.callAsyncTaskForReviews(this as IAsyncListener, mApiServices, "23776", 30, offset)
+        mProfileActivityView.callAsyncTaskForReviews(this as IAsyncListener, mApiServices, "23776", 10, offset)
     }
 
 

@@ -5,13 +5,17 @@ import com.bishwajeet.traveldiaries.util.BASE_URL
 import retrofit2.Call
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Headers
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface IAPIServiceContract {
 
-    @GET("/formData")//"/travelers-api-forwarding/travelers/activities/{activity_id}/reviews")
-    fun getReviews(//@Path(value = "activity_id") activity_id: String,
-                   //@Query(value = "limit") limit: String,
-                   //@Query(value = "offset") offset: String
+    @GET("/travelers-api-forwarding/travelers/activities/{activity_id}/reviews")
+    @Headers("User-Agent: travel-diaries")
+    fun getReviews(@Path(value = "activity_id") activity_id: String,
+                   @Query(value = "limit") limit: String,
+                   @Query(value = "offset") offset: String
     ): Call<ReviewsResponse>
 
 

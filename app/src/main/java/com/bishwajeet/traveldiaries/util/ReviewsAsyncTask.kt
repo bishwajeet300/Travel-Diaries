@@ -40,20 +40,19 @@ class ReviewsAsyncTask constructor(
 
 
     override fun doInBackground(vararg params: SparseArray<Any>): ReviewsResponse {
-        val call = mApiServices.getReviews()
-//            params[0][0].toString(),
-//            params[0][1].toString(),
-//            params[0][2].toString()
-//        )
+        val call = mApiServices.getReviews(
+            params[0][0].toString(),
+            params[0][1].toString(),
+            params[0][2].toString()
+        )
         var reviewListResponse = ReviewsResponse()
         call.enqueue(object : Callback<ReviewsResponse> {
             override fun onFailure(call: Call<ReviewsResponse>, t: Throwable) {
-                System.out.println(t.message)
+                Log.i("onFailure", t.message.toString())
                 onCancelled()
             }
 
             override fun onResponse(call: Call<ReviewsResponse>, response: Response<ReviewsResponse>) {
-                System.out.println(response.body())
                 if (response.isSuccessful) {
                     reviewListResponse = response.body()!!
                     onPostExecute(reviewListResponse)
