@@ -3,6 +3,7 @@ package com.bishwajeet.traveldiaries.view
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -53,5 +54,20 @@ class SplashActivityTest {
 
         onView(withId(R.id.rvReviews))
             .perform(actionOnItemAtPosition<ReviewRecyclerAdapter.ReviewViewHolder>(5, click()))
+    }
+
+
+    @Test
+    fun scrollTestRecyclerView() {
+        onView(withId(R.id.tvAppName))
+            .check(ViewAssertions.matches(ViewMatchers.withText(R.string.app_name)))
+
+        Thread.sleep(10000)
+
+        onView(withId(R.id.rvReviews))
+            .perform(RecyclerViewActions.scrollToPosition<ReviewRecyclerAdapter.ReviewViewHolder>(20))
+            .perform(RecyclerViewActions.scrollToPosition<ReviewRecyclerAdapter.ReviewViewHolder>(30))
+            .perform(RecyclerViewActions.scrollToPosition<ReviewRecyclerAdapter.ReviewViewHolder>(40))
+            .perform(actionOnItemAtPosition<ReviewRecyclerAdapter.ReviewViewHolder>(10, click()))
     }
 }
